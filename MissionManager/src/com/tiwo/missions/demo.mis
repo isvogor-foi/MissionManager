@@ -1,0 +1,14 @@
+ # TiWO demo mission
+ # Created by Ivan
+ 
+START
+
+FORWARD 2.3
+RIGHT 30
+
+DETECT LEFT_ARROW
+  
+GO FORWARD
+ 	UNTIL OBJECT_DETECTED
+  
+STOP
