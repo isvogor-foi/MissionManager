@@ -69,7 +69,7 @@ public class Parser {
 		// Handle "Detect"
 		for(DetectCommands currentCommand : DetectCommands.values()){
 			if(line.startsWith(currentCommand.toString())){
-				DetectCommand d = new DetectCommand();
+				DetectCommand d = new DetectCommand(line);
 				program.add(d);
 			}
 		}
@@ -77,7 +77,7 @@ public class Parser {
 	
 	public void ExecuteProgram(){
 		for (Command command : this.program) {
-			System.out.println("Executiong: " + command.getName());
+			System.out.println("Executing: \n\t" + command.getName());
 			command.execute();
 		}
 	}
