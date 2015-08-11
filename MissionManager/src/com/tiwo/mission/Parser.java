@@ -45,7 +45,7 @@ public class Parser {
 		// Handle rotation
 		for(RotationCommands currentCommand : RotationCommands.values()){
 			if(line.startsWith(currentCommand.toString())){
-				RotationCommand r = new RotationCommand();
+				RotationCommand r = new RotationCommand(line);
 				program.add(r);
 			}
 		}
@@ -53,7 +53,7 @@ public class Parser {
 		// Handle "Go"
 		for(GoCommands currentCommand : GoCommands.values()){
 			if(line.startsWith(currentCommand.toString())){
-				GoCommand g = new GoCommand();
+				GoCommand g = new GoCommand(line);
 				program.add(g);
 			}
 		}

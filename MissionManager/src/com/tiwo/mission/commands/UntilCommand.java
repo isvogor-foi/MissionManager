@@ -1,7 +1,12 @@
 package com.tiwo.mission.commands;
 
-public class UntilCommand extends Command{
+import hr.foi.tiwo.ObjDec;
+import hr.foi.tiwo.objectdetection.events.ObjectDetectedListener;
 
+public class UntilCommand extends Command implements ObjectDetectedListener{
+
+	boolean isEnabled = false;
+	
 	@Override
 	public String getName() {
 		return "UNTIL";
@@ -14,8 +19,19 @@ public class UntilCommand extends Command{
 
 	@Override
 	public boolean execute() {
-		// TODO Auto-generated method stub
+		System.out.println("Waiting for object detection...");
+		isEnabled = true;
+		ObjDec.addListener(this);
+		
 		return false;
+	}
+
+	@Override
+	public void ObjectDetected() {
+		if(isEnabled){
+			System.out.println("Waiting for object detection...");
+		}
+		
 	}
 
 }

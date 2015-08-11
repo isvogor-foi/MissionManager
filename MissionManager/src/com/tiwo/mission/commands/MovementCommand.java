@@ -1,5 +1,8 @@
 package com.tiwo.mission.commands;
 
+import java.io.IOException;
+
+import com.tiwo.communication.Serial;
 import com.tiwo.mission.commands.enums.MovementCommands;
 
 public class MovementCommand extends Command{
@@ -27,9 +30,19 @@ public class MovementCommand extends Command{
 			System.out.println("Movement command in wrong format!");
 			return false;
 		}		
-		System.out.println("Movement ok, COMMAND: " + command[0] + ", PARAMETER: " + Float.parseFloat(command[1]));
-
 		
+		System.out.println("Movement ok, COMMAND: " + command[0] + ", PARAMETER: " + Float.parseFloat(command[1]));
+		if(Serial.getInstance().isConnected){
+			try {
+				Serial.getInstance().sendMessage(command[0]);
+				// add timing ...
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else{
+			System.out.println("Serial is currently disconnected");
+		}
 		
 		return true;
 	}

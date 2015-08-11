@@ -33,7 +33,7 @@ public class MissionManagerMain {
 	
 	public MissionManagerMain(){
 		System.out.println("Mission manager initialized...");
-		LoadMissionFile("/home/ivan/Dev/java/workspace/MissionManager/src/com/tiwo/missions/demo.mis");
+		LoadMissionFile("/home/ivan/git/MissionManager/MissionManager/src/com/tiwo/missions/demo.mis");
 	}
 	
 	public void LoadMissionFile(String filename){
@@ -50,8 +50,7 @@ public class MissionManagerMain {
 		    	}
 		    }
 		} catch (Exception ex){
-			System.out.println("File reading error: " + ex.getMessage());
-			 
+			System.out.println("File reading error: " + ex.getMessage()); 
 		}
 		
 		p.ExecuteProgram();
