@@ -33,12 +33,8 @@ public class MovementCommand extends Command{
 		
 		System.out.println("Movement ok, COMMAND: " + command[0] + ", PARAMETER: " + Float.parseFloat(command[1]));
 		if(Serial.getInstance().isConnected){
-			try {
-				Serial.getInstance().sendMessage(command[0]);
-				// add timing ...
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			Serial.getInstance().sendMessage(command[0]);
+			// add timing ...
 		}
 		else{
 			System.out.println("Serial is currently disconnected");

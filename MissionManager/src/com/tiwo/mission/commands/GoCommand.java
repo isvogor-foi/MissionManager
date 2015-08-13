@@ -33,12 +33,8 @@ public class GoCommand extends Command{
 		
 		System.out.println("Movement ok, COMMAND: " + command[0] + ", PARAMETER: " + command[1]);
 		if(Serial.getInstance().isConnected){
-			try {
-				Serial.getInstance().sendMessage(command[1]);
-				// no timing go forever
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			Serial.getInstance().sendMessage(command[1]);
+			// no timing go forever
 		}
 		else{
 			System.out.println("Serial is currently disconnected");

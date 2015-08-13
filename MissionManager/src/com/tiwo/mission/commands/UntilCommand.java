@@ -21,7 +21,7 @@ public class UntilCommand extends Command implements ObjectDetectedListener{
 	public boolean execute() {
 		System.out.println("Waiting for object detection...");
 		isEnabled = true;
-		ObjDec.addListener(this);
+		//ObjDec.addListener(this);
 		
 		return false;
 	}
