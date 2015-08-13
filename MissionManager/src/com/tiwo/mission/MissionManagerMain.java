@@ -36,6 +36,13 @@ public class MissionManagerMain {
 		LoadMissionFile("/home/ivan/git/MissionManager/MissionManager/src/com/tiwo/missions/demo.mis");
 	}
 	
+	public MissionManagerMain(String missionFile){
+		System.out.println("Mission manager initialized...");
+		LoadMissionFile(missionFile);
+	}
+	
+	
+	
 	public void LoadMissionFile(String filename){
 		File file = new File(filename);
 		
